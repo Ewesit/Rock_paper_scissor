@@ -33,3 +33,29 @@ def determine_winner(user_choice, computer_choice):
         
 winner = determine_winner(user_choice, computer_choice);
 print(winner)
+    
+#play game and determine winner with most wins
+def play_game(rounds):
+    user_score = 0
+    computer_score = 0
+    for _ in range(rounds):
+        user_choice = get_user_choice()
+        computer_choice = get_computer_choice()
+        print(f"Computer chose: {computer_choice}")
+        print(f"You chose: {user_choice}")
+        result = determine_winner(user_choice, computer_choice)
+        print(result)
+        if result == "You win!":
+            user_score += 1
+        elif result == "Computer wins!":
+            computer_score += 1
+
+    print("Game over!")
+    print(f"Your score: {user_score}")
+    print(f"Computer's score: {computer_score}")
+    if user_score > computer_score:
+        print("You win the game!")
+    elif computer_score > user_score:
+        print("Computer wins the game!")
+    else:
+        print("It's a tie!")
