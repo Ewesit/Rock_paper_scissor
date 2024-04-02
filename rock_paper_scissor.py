@@ -49,6 +49,8 @@ def play_game(rounds):
             user_score += 1
         elif result == "Computer wins!":
             computer_score += 1
+        if user_score == (rounds // 2) + 1 or computer_score == (rounds // 2) + 1:
+            break
 
     print("Game over!")
     print(f"Your score: {user_score}")
