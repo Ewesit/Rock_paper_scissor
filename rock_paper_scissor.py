@@ -31,8 +31,8 @@ def determine_winner(user_choice, computer_choice):
     else:
         return "Computer wins!"
         
-winner = determine_winner(user_choice, computer_choice);
-print(winner)
+# winner = determine_winner(user_choice, computer_choice);
+# print(winner)
     
 #play game and determine winner with most wins
 def play_game(rounds):
@@ -59,3 +59,13 @@ def play_game(rounds):
         print("Computer wins the game!")
     else:
         print("It's a tie!")
+
+# Main game loop
+while True:
+    rounds = int(input("Enter the number of rounds (3 or 5): "))
+    if rounds in [3, 5]:
+        break
+    else:
+        print("Invalid number of rounds. Please enter 3 or 5.")
+
+play_game(rounds)
